@@ -1,14 +1,13 @@
-#!/usr/bin/env bash
+#!/bin/bash
 usage(){
    echo "recp [-d] <file list>
           -d   to stdout only"
-    exit 1
+    exit 0
 }
 
 if [ $# -lt 1 ]
 then
 usage
-exit
 fi
 
 #system Type
@@ -24,7 +23,7 @@ case $os in
         ;;
         *)
                 echo -e "OS '$os' not suppose yet"
-                exit 1
+                exit 0
 esac
 
 #遍历文件打印
