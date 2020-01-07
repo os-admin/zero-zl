@@ -46,7 +46,7 @@ esac
         cat $i
         if [ $count -ne $# ]
         then
-        $count++
+        (($count++))
         echo 
         fi
 
