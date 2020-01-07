@@ -1,7 +1,6 @@
 #!/bin/bash
 usage(){
-   echo "recp [-d] <file list>
-          -d   to stdout only"
+   echo "recp <file list>"
     exit 0
 }
 
@@ -26,6 +25,7 @@ case $os in
                 exit 0
 esac
 
+count=1
 #遍历文件打印
 for i in $*
 do
@@ -44,5 +44,10 @@ case $languageType in
 esac
         echo "$commentType $i"  
         cat $i
-        echo -e "\n"
+        if [ $count -ne $# ]
+        then
+        $count++
+        echo 
+        fi
+
 done | $addCon
