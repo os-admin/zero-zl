@@ -44,10 +44,11 @@ case $languageType in
 esac
         echo "$commentType $i"  
         cat $i
-        if [ $count -ne $# ]
+        if [ $count -lt $# ]
         then
-        (($count++))
-        echo 
-        fi
+        ((count++))
+        echo
+        echo
+fi
 
 done | $addCon
